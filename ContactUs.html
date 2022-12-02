@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="act10external.css"> <!--link to the css file-->
+<body>
+<title>Contact</title>
+<div class="center-container">
+	<h2 align="center">Contact Information</h2>
+	<form id="contactform">
+		<div class="container">
+			<label for="Fname"><b>First Name</b></label>
+			<input type="text" placeholder="Enter First Name" name="Fname" required>
+			<label for="Lname"><b>Last Name</b></label>
+			<input type="text" placeholder="Enter Last Name" name="Lname" required>
+			<label for="email"><b>Email</b></label>
+			<input type="email" placeholder="Enter Email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+			<label for="comment"><b>Comment</b></label>
+			<br>
+			<textarea name="comment" form="usrform" placeholder="Comment here. . . "></textarea>
+			<button type="submit"><a href="CAROUSEL.html" style="text-decoration:none;color:white">Submit</a></button>
+		</div>
+		<div class="container" style="background-color:#f1f1f1">
+			<a href="Home.html"><button type="button" title="Go back to Home" class="cancel">Cancel</button></a>
+		</div>
+	</form>
+</div>
+</body>
+</head>
+</html>
