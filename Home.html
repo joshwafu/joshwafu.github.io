@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!-- IIT406 - Computer Programming 3 -->
+<!-- Verdejo, Erle Joshua L. -->
+<!-- IT2A -->
+<!-- Finals - Final Exam Project -->
+
+<html>
+<head>
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="finalexternal.css"> <!--link to the css file-->
+	<link rel="stylesheet" href="responsive.css"> <!--link to the css file for responsive-->
+<body onload="initClock()">
+<button onclick="topFunction()" id="myBtn2" title="Back to top">&uarr;</button>
+<script>
+	// Get the button
+	let mybutton2 = document.getElementById("myBtn2");
+
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybutton2.style.display = "block";
+		} else {
+			mybutton2.style.display = "none";
+		}
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
+</script>
+<div class="header">
+	<a href="Home.html" class="logo">
+		<img height="100" src="logo.png">
+		<img height="75" src="funph2.png">
+	</a>
+	<div class="header-right">
+		<br>
+		<div class="datetime">
+			<div class="date">
+				<span id="dayname">Day</span>,
+				<span id="month">Month</span>
+				<span id="daynum">00</span>,
+				<span id="year">Year</span>
+			</div>
+			<div class="time">
+				<span id="hour">00</span>:
+				<span id="minutes">00</span>:
+				<span id="seconds">00</span>
+				<span id="period">AM</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function updateClock(){
+			var now = new Date();
+			var dname = now.getDay(),
+			mo = now.getMonth(),
+			dnum = now.getDate(),
+			yr = now.getFullYear(),
+			hou = now.getHours(),
+			min = now.getMinutes(),
+			sec = now.getSeconds(),
+			pe = "AM";
+			if(hou >= 12){
+				pe = "PM";
+			}
+			if(hou == 0){
+				hou = 12;
+			}
+			if(hou > 12){
+				hou = hou - 12;
+			}
+			Number.prototype.pad = function(digits){
+				for(var n = this.toString(); n.length < digits; n = 0 + n);
+				return n;
+			}
+			var months = ["January", "February", "March", "April", "May", "June", "July", "Augest", "September", "October", "November", "December"];
+			var week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+			var ids = ["dayname", "month", "daynum", "year", "hour", "minutes", "seconds", "period"];
+			var values = [week[dname], months[mo], dnum.pad(2), yr, hou.pad(2), min.pad(2), sec.pad(2), pe];
+			for(var i = 0; i < ids.length; i++)
+			document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+			}
+			function initClock(){
+				updateClock();
+				window.setInterval("updateClock()", 1);
+			}
+		</script>
+	</div>
+</div>
+
+<div id="sideBtn">
+		<button class="openbtn" onclick="openNav()">☰</button>  
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<div id="mySidebar" class="sidebar">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	<a href="#about" style="background-color:#D3D3D3;"><h2><img src="about.png" width="50" id="bigger"><br>About the Philippines</h2></a>
+	<a href="#history"><img src="history.png" id="smaller">History</a>
+	<a href="#environment"><img src="geo.png" id="smaller">Geography & Environment</a>
+	<a href="#demog"><img src="demog.png" id="smaller">Demographics</a>
+	<a href="#culture"><img src="culture.png" id="smaller">Culture</a>
+	<a href="#tour" style="background-color:#D3D3D3;"><h2><img src="tour.png" id="bigger"><br>Tourist Attractions</h2>
+	<a href="#luzon"><img src="locblue.png" id="smaller">Luzon</a>
+	<a href="#visayas"><img src="locyellow.png" id="smaller">Visayas</a>
+	<a href="#mindanao"><img src="locred.png" id="smaller">Mindanao</a>
+	<a href="VideoGallery.html"><h3><img src="video.png" id="bigger"><br>Video Gallery</h3></a>
+	<a href="Login.html"><span style="background-color:#98FB98;color:black;">Log-In</span></a>
+	<a href="ContactUs.html"><span style="background-color:#60100b;color:white;">Contact Us</span></a>
+</div>
+
+<main class="col-12">
+	<section id="about">
+		<div class="section-inner">
+			<h1>ABOUT<br> the <br>PHILIPPINES</h1>
+			<div class="responsive">
+				<div class="gallery">
+					<a href="#history" title="go to History"><img src="historygal.jpeg" height="400"></a>
+					<div class="desc">HISTORY</div>
+				</div>
+			</div>
+			<div class="responsive">
+				<div class="gallery">
+					<a href="#environment" title="go to Geography & Environment"><img src="environmentgal.jpg" height="400"></a>
+					<div class="desc">GEOGRAPHY & ENVIRONMENT</div>
+				</div>
+			</div>
+			<div class="responsive">
+				<div class="gallery">
+					<a href="#demog" title="go to Demographics"><img src="demoggal.jpg" height="400"></a>
+					<div class="desc">DEMOGRAPHICS</div>
+				</div>
+			</div>
+			<div class="responsive">
+				<div class="gallery">
+					<a href="#culture" title="go to Culture"><img src="culturegal.jpg" height="400"></a>
+					<div class="desc">CULTURE</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="history">
+		<div class="section-inner">
+			<h1>PHILIPPINES HISTORY</h1>
+			<blockquote>
+			<p>People have lived in the Philippines since the dawn of human history. Originally, the various islands were populated by competing tribes, each with their own king or queen. In 1521, the explorer Magellan claimed the islands for Spain and colonization began in 1565. Manila was established as the capital of what was then known was the Spanish East Indies in 1571.</p>
+			<br>
+			<p>Spanish rule brought Catholicism to the area, with missionaries establishing churches, schools, hospitals, universities and largely displacing the previously entrenched Hindu, Islamic and Buddhist faiths. Free education was introduced in 1863, but did not take off until much later.</p>
+			<br>
+			<p>Residents were obligated to defend against internal revolts by indigenous groups, as well as attacks from the Dutch and Portuguese. Free trade was introduced during the 19th century which brought wealth to the population. Evidence of Spanish rule can be seen across the Philippines, particularly in the plentiful Baroque churches and the walled Intramuros district of Manila.</p>
+			<br>
+			<p>In 1872, three priests were executed at Bagumbayum (now Rizal Park) for sedition, which sparked a movement for political reform. Early lobbyists were executed, which prompted Andrés Bonifacio to establish a secret society for independence known as the Katipunan, in 1892. The organization gained many members, and Emilio Aguinaldo became leader. 1896 saw the execution of Dr José Rizal which prompted an uprising by the revolutionaries. The Philippines was briefly declared independent by Aguinaldo in 1898, but this was not recognized by America, as it asserted a claim to the islands as a result of the 1898 Treaty of Paris that ended the Spanish-American war.</p>
+			<br>
+			<p>The Philippine-American war between American soldiers and Filipino revolutionaries lasted from 1899-1902 and resulted in US control of the region, during which literacy increased and freedom of religion was introduced, removing Catholicism’s status as the state religion. America’s promises of independence in 1916 led to the Philippines being granted Commonwealth status in 1935.</p>
+			<br>
+			<p>However, the Philippines were invaded by Japan during WWII, which was a dark time when over a million Filipinos died. The nation finally regained its independence on July 4, 1946. The challenge of rebuilding was compounded by frequent challenges from rebel groups and communists. In 1965, Ferdinand Marcos was elected president. He introduced martial law to retain power in 1972, from which time he persecuted rivals and ruled by decree.</p>
+			<br>
+			<p>The assassination of the opposition leader, Benigno ‘Ninoy’ Aquino, Jr. in 1983 increased political pressure for reform. Marcos called a presidential election in 1986, in which he defeated Benigno Aquino’s widow, Corazon Aquino in what was widely believed to be a rigged result. The People Power revolution followed and resulted in the defeat and exile of Marcos and his allies. Tourists can visit Epifanio de los Santos Avenue (EDSA), which was the site of mass protests in support of the rebel leaders. After the departure of Marcos, Corazon Aquino was recognized as president of the Philippines.</p>
+			<br>
+			<p>From 1986 onwards, progress was hampered by corruption, national debt, attempted coups and ongoing insurgency by communist and Islamic groups. The economy improved between 1992 and 1997, until the East Asian Financial Crisis, internal corruption and another revolution in 2001 caused further difficulties for the nation. Gloria Macapagal-Arroyo became president after the revolution but her nine-year administration was marred by scandal and corruption. Benigno ‘Noynoy’ Aquino III was elected president in May 2010 and shortly after in September, secured a US $434 million agreement with the Millennium Challenge Corporation to help fund programs for infrastructure development, revenue generation and poverty reduction.</p>
+			<br>
+			<p>Rizal Park in Manila is one of the most politically significant sites in the Philippines. It was the location for the executions of early revolutionaries, the 1946 declaration of independence, and the 1986 rallies of Marcos and Corazon Aquino that led to the EDSA revolution.</p>
+			</blockquote>			
+		</div>
+	</section>
+	<section id="environment">
+		<div class="section-inner">
+			<h1>PHILIPPINES GEOGRAPHY</h1>
+			<blockquote>
+			<p>The Philippines is composed of 7,107 separate islands (7,106 during high tide), only 880 of which are inhabited. The three major geographical areas in the Philippines are the large island of Luzon in the north, which includes Manila; the large island of Mindanao in the south; and the group of islands lying between them, known as the Visayas. The three stars on the Philippine flag symbolize these three areas.</p>
+			<br>
+			<p>The island geography of the Philippines includes about 21,000 miles of natural coastline. Much of the coastal area is rugged and irregular, punctuated by numerous natural harbors and picturesque coves. The Philippines also has some of the most spectacular beaches to be found in the South Pacific. Sites that would live up to anyone's fantasy of a pristine South Pacific paradise of white sand beaches and crystal blue waters, they are a popular destination for tourists from around the world. Unfortunately, the heavy pollution and rocky coastline of Manila Bay render the metro Manila area itself unsuited for leisurely Sundays at the beach.</p>
+			<br>
+			<p>The interior of the country is generally mountainous, with several mountain peaks reaching almost 10,000 feet. In addition, the Philippines has extensive fertile plains along the coast and in the center of the country. It also features lush and scenic rolling hills, with rich valleys crossed by rivers. There are numerous volcanoes in the country, and some are frequently active. The most recent and infamous example was the eruption of Mt. Pinatubo on June 12, 1991, which was the largest volcanic eruption of the century. The Mt. Pinatubo eruption permanently altered the topography of northern Luzon and continues to cause flood control problems.</p>
+			</blockquote>
+			<br>
+			<h1>PHILIPPINES ENVIRONMENT</h1>
+			<blockquote>
+			<p>The Philippines has a tropical climate, but it is marginally less hot and humid than many tropical countries for most of the year. Although the sun shines almost year round, there are slight seasonal variations in the weather. The dry summer season, which runs from about late April to early June is hot and humid and with little rainfall. The typhoon season runs from June to September, with frequent drenching rains that can temper the heat somewhat but also preclude any outdoor activities. The downpours are often limited in duration, but the resulting flash floods can create chaos by blocking streets, stranding motorists, and bringing the already congested traffic of Manila to a virtual standstill. The most pleasant season follows the rainy season, from November until March. During this time of year, mornings can be fresh, and even the midday temperatures remain bearable, with frequent breezes that temper the heat.</p>
+			<br>
+			<p>The temperature range in Manila is relatively narrow, with minimum temperatures in the mid-70s and highs in the mid-90s, and an annual mean of about 80°F. Average relative humidity ranges from 69% in April to 84% in August or September.</p>
+			<br>
+			<p>Baguio, the original summer capital of the Philippines, is located 155 miles north of Manila at an altitude of about 5,000 feet. The climate varies between the dry and the very wet season, each lasting about six months. The dry season runs from December to May, with temperatures ranging from the 50s and 60s at night to highs in the mid-80s during the day. Baguio averages 176 inches of rainfall a year, about half of which falls in July and August alone. The rains begin tapering off in September and are light in October and November.</p>
+			</blockquote>
+		</div>
+	</section>
+	<section id="demog">
+		<div class="section-inner">
+			<h1>PHILIPPINES DEMOGRAPHICS</h1>
+			<br>
+			<div class="center-img">
+				<div class="container">
+					<img src="population.png" class="image" width="600">
+					<div class="overlay">
+						<div class="text">
+							<h1>PHILIPPINES POPULATION</h1>
+							<br>
+							<p>The current population of the Philippines is 113,086,372 as of Tuesday, November 29, 2022, <br>based on Worldometer elaboration of the latest United Nations data.</p>
+							<br>
+							<p>The Philippines 2020 population is estimated at 109,581,078 people at mid year according to UN data.</p>
+							<br>
+							<p>The Philippines population is equivalent to 1.41% of the total world population.</p>
+							<br>
+							<p>The Philippines ranks number 13 in the list of countries (and dependencies) by population.</p>
+						</div>
+					</div>
+				</div>	
+				<br>
+				<div class="container">
+					<img src="urbanpop.png" class="image" width="600">
+					<div class="overlay">
+						<div class="text">
+							<h1>PHILIPPINES URBAN<br> POPULATION</h1>
+							<br>
+							<p>Currently, 47.1 % of the population of the Philippines is urban (50,971,408 people in 2019)</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="culture">
+		<div class="section-inner">
+			<h1>PHILIPPINES CULTURE</h1>
+			<blockquote>
+				<p>The Philippines is a culture in which East meets West. The Filipino people have a distinct Asian background, with a strong Western tradition. The modern Filipino culture developed through influence from Chinease traders, Spanish conquistadors, and American rulers. Filipino people tend to be very hospitable, especially to Western visitors. Because of their strong ties to Spanish culture, Filipinos are emotional and passionate about life in a way that seems more Latin than Asian. This is easily seen in the works of comporary artists such as Rody Herrera in his painting Unahan Sa Duluhan.</p>
+				<br>
+				<p>The family is the basic and most important aspect of Filipino culture. Divorce is prohibited and annulments are rare. The family is the safety net for indivuduals, especially older people, during difficult economic times. Children will often stay with their parents into adulthood, only leaving when they get married (2). Political and business ties are often influenced by family relationships.</p>
+				<br>
+				<p>Two traits that many foreign visitors often have a difficult time understanding are Pakikisama and Utang na Loob. Pakikisama roughly means "getting along" and requires individuals overlook slight improprieties or indiscretions for the sake of preserving peace within the family, personal, or business relationship. Utang na Loob refers to the custom of paying back one favor with another. These traits emphasize the importance that Filipino people place on maintaining pleasant interpersonal relationships and puting the needs of the group ahead of the individual.</p>
+				<br>
+				<p>More than 80% of the population of the Philippines is Roman Catholic. Fiestas in honor of the patron saint of a town are quite common. Criticism of the Catholic church is not taken lightly - and should be avoided.</p>
+				<br>
+				<p>In the Philippines, people greet each other with a handshake. A smile or raised eyebrows can mean "Hello" or "Yes". Someone can be summoned with a downward wave of the hand.</p>
+			</blockquote>
+		</div>
+	</section>
+	<section id="tour">
+		<div class="section-inner">
+			<h1>TOURIST<br>ATTRACTIONS</h1>
+			<div class="center-gallery">
+				<div class="responsive">
+					<div class="gallery">
+						<a href="#luzon" title="go to Luzon"><img src="luzongal.jpg" height="400"></a>
+						<div class="desc">LUZON</div>
+					</div>
+				</div>
+				<div class="responsive">
+					<div class="gallery">
+						<a href="#visayas" title="go to Visayas"><img src="visayasgal.jpg" height="400"></a>
+						<div class="desc">VISAYAS</div>
+					</div>
+				</div>
+				<div class="responsive">
+					<div class="gallery">
+						<a href="#mindanao" title="go to Mindanao"><img src="mindanaogal.jpg" height="400"></a>
+						<div class="desc">MINDANAO</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="luzon">
+		<div class="section-inner">
+			<h1>LUZON</h1>
+			<div class="slideshow-container">
+				<div class="mySlides fade">
+					<div class="numbertext">1 / 3</div>
+					<img src="luzongal.jpg" width="1000">
+					<div class="desc"><h3>MAYON VOLCANO</h3><p>Mayon Volcano is a Stratovolcano composite type volcano renowned for its perfect cone shape, can be seen in all eight cities and municipalities of Albay.  With a height of 8,077 feet or 2,462 metres, it is the highest point of the province and was declared the first national park of the Philippines on July 20, 1938 and was reclassified a Natural Park named Mayon Volcano Natural Park in the year of 2000.   Rocks around Mayon Volcano was aged more than 20 million years old.</p><br><p style="font-size:.8em">source: <a href="http://worldlandforms.com/landforms/mayon-volcano/" target="_blank">http://worldlandforms.com/landforms/mayon-volcano/</a></p></div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">2 / 3</div>
+					<img src="rizal.jpg" width="1000">
+					<div class="desc"><h3>RIZAL PARK</h3><p>This premiere people’s park boasts of world-class sculptures, historical markers, beautiful gardens, facilities for photo and art exhibits, event venues, and various forms of entertainment. More than just a place to stroll around, Rizal Park is indeed a sanctuary to people from all walks of life.</p>
+					<br>
+					<p>Formerly called “Luneta” from the French word Lunette which means a cresent-shaped fort, it was the site of “La Calzada”, the social hub of Manila’s elite. It was also used by the Spaniards as an execution ground for rebels and activist. Dr. Jose Rizal was executed in Rizal Park on December 30, 1896.</p><br><p style="font-size:.8em">source: <a href="https://philippines.travel/activities/rizal-park#:~:text=%22This%20premiere%20people's%20park%20boasts,from%20all%20walks%20of%20life." target="_blank">https://philippines.travel/activities/rizal-park#:~:text=%22This%20premiere%20people's%20park%20boasts,from%20all%20walks%20of%20life.</a></p></div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">3 / 3</div>
+					<img src="banaue.jpg" width="1000">
+					<div class="desc"><h3>BANAUE RICE TERRACES</h3><p>The Banaue Rice Terraces (Filipino: Hagdan-hagdang Palayan ng Banawe) are terraces that were carved into the mountains of Banaue, Ifugao, in the Philippines, by the ancestors of the Igorot people. The terraces are occasionally called the "Eighth Wonder of the World". It is commonly thought that the terraces were built with minimal equipment, largely by hand. The terraces are located approximately 1,500 metres (4,900 feet) above sea level. These are fed by an ancient irrigation system from the rainforests above the terraces. It is said that if the steps were put end to end, it would encircle half of the globe.</p><br><p style="font-size:.8em">source: <a href="https://en.wikipedia.org/wiki/Banaue_Rice_Terraces" target="_blank">https://en.wikipedia.org/wiki/Banaue_Rice_Terraces</a></p></div>
+				</div>
+				<a class="prev" onclick="plusSlides(-1)" title="previous">❮</a>
+				<a class="next" onclick="plusSlides(1)" title="next">❯</a>
+			</div>
+			<br>
+
+			<div style="text-align:center">
+				<span class="dot" onclick="currentSlide(1)" title="go to 1st image"></span> 
+				<span class="dot" onclick="currentSlide(2)" title="go to 2nd image"></span> 
+				<span class="dot" onclick="currentSlide(3)" title="go to 3rd image"></span> 
+			</div>
+		</div>
+		<script>
+			let slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+				showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+				let i;
+				let slides = document.getElementsByClassName("mySlides");
+				let dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}    
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";  
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";  
+				dots[slideIndex-1].className += " active";
+			}
+		</script>
+	</section>
+	<section id="visayas">
+		<div class="section-inner">
+			<h1>VISAYAS</h1>
+			<div class="slideshow-container2">
+				<div class="mySlides2 fade">
+					<div class="numbertext">1 / 3</div>
+					<img src="visayasgal.jpg" width="1000">
+					<div class="desc"><h3>CHOCOLATE HILLS</h3><p>The Chocolate Hills are a group of unusually shaped hills located in the middle of the island of Bohol in Philippines. This extraordinary landscape is unique to this small island. It is unknown how many chocolate hills there are. It is known that at the bare minimum there are 1268 hills but some estimates put this number as high as 1776. The hills are not huge; the highest one barely reaches 120 meters in height. Even so, most hills are between 30 and 50 meters. The conical Chocolate hills are scattered within a fifty square kilometer area.</p><br><p style="font-size:.8em">source: <a href="http://www.chocolatehills.net/" target="_blank">http://www.chocolatehills.net/</a></p></div>
+				</div>
+
+				<div class="mySlides2 fade">
+					<div class="numbertext">2 / 3</div>
+					<img src="ruins.jpg" width="1000">
+					<div class="desc"><h3>THE RUINS</h3><p>The Ruins was the ancestral mansion of the family of wealthy sugar businessman Don Mariano Ledesma Lacson built on a 440 hectare sugar plantation in Talisay City, Negros Occidental, in the early 1900s in memory of his Portuguese wife Maria Braga Lacson, who died during the birth of their 8th child. During the Second World War, Filipino guerillas burned it down as a countermeasure to prevent the invading Japanese forces from using it as a military headquarters. It burned for three days. The intention was to burn it to the ground.</p><br><p style="font-size:.8em">source: <a href="https://en.wikipedia.org/wiki/The_Ruins_(mansion)#:~:text=The%20Ruins%20is%20the%20remains,and%20inspired%20by%20Italian%20architecture." target="_blank">source: https://en.wikipedia.org/wiki/The_Ruins_(mansion)#:~:text=The%20Ruins%20is%20the%20remains,and%20inspired%20by%20Italian%20architecture.</a></p></div>
+				</div>
+
+				<div class="mySlides2 fade">
+					<div class="numbertext">3 / 3</div>
+					<img src="kawasan.jpg" width="1000">
+					<div class="desc"><h3>KAWASAN FALLS</h3><p>Kawasan Falls in the island province of Cebu is one of the best waterfalls in the Philippines. This set of multi-tier waterfalls lies in Barangay Matutinao, Badian, which sits on the southwestern coast of Cebu and is about 103 kilometers from Cebu City. This coastal town is blessed with natural attractions such as rivers, freshwater streams, and massive jungle canyons. Badian is also close to notable towns like Moalboal (18KM away), Alegria ( 17KM away), and Oslob (73 kilometers away).</p><br><p style="font-size:.8em">source: <a href="https://guidetothephilippines.ph/articles/adventure-and-outdoors/kawasan-falls-cebu-guide" target="_blank">https://guidetothephilippines.ph/articles/adventure-and-outdoors/kawasan-falls-cebu-guide</a></p></div>
+				</div>
+				<a class="prev2" onclick="plusSlides2(-1)" title="previous">❮</a>
+				<a class="next2" onclick="plusSlides2(1)" title="next">❯</a>
+			</div>
+			<br>
+
+			<div style="text-align:center">
+				<span class="dot2" onclick="currentSlide2(1)" title="go to 1st image"></span> 
+				<span class="dot2" onclick="currentSlide2(2)" title="go to 2nd image"></span> 
+				<span class="dot2" onclick="currentSlide2(3)" title="go to 3rd image"></span> 
+			</div>
+		</div>
+		<script>
+			let slideIndex2 = 1;
+			showSlides2(slideIndex2);
+
+			function plusSlides2(n) {
+				showSlides2(slideIndex2 += n);
+			}
+
+			function currentSlide2(n) {
+				showSlides2(slideIndex2 = n);
+			}
+
+			function showSlides2(n) {
+				let i;
+				let slides2 = document.getElementsByClassName("mySlides2");
+				let dots2 = document.getElementsByClassName("dot2");
+				if (n > slides2.length) {slideIndex2 = 1}    
+				if (n < 1) {slideIndex2 = slides2.length}
+				for (i = 0; i < slides2.length; i++) {
+					slides2[i].style.display = "none";  
+				}
+				for (i = 0; i < dots2.length; i++) {
+					dots2[i].className = dots2[i].className.replace(" active", "");
+				}
+				slides2[slideIndex2-1].style.display = "block";  
+				dots2[slideIndex2-1].className += " active";
+			}
+		</script>
+	</section>
+	<section id="mindanao">
+		<div class="section-inner">
+			<h1>MINDANAO</h1>
+			<div class="slideshow-container3">
+				<div class="mySlides3 fade">
+					<div class="numbertext">1 / 3</div>
+					<img src="mindanaogal.jpg" width="1000">
+					<div class="desc"><h3>TINAGO FALLS</h3><p>Tinago Falls is a waterfall on the Agus River, located in between the town of Linamon and Iligan City, Lanao del Norte in the northern part of the Philippine island of Mindanao. It is one of the main tourist attractions of Iligan, a city known as the City of Majestic Waterfalls. Tinago is a Filipino term meaning "hidden", the falls being hidden in a deep ravine. Trekking to the falls requires approximately 500 descending steps called the winding staircase. The falls is high, its very cold waters cascading beautifully into a deep and calm basin-like pool which appears like a blue-colored lagoon. Under the falls is a small cave where people can enter and listen to the rumbling waters.</p><br><p style="font-size:.8em">source: <a href="https://en.wikipedia.org/wiki/Tinago_Falls" target="_blank">https://en.wikipedia.org/wiki/Tinago_Falls</a></p></div>
+				</div>
+
+				<div class="mySlides3 fade">
+					<div class="numbertext">2 / 3</div>
+					<img src="apo.jpg" width="1000">
+					<div class="desc"><h3>MOUNT APO</h3><p>Mount Apo, also known locally as Apo Sandawa, is a large solfataric, dormant stratovolcano on the island of Mindanao, Philippines. With an elevation of 2,954 meters (9,692 ft) above sea level, it is the highest mountain in the Philippine Archipelago and is located between Davao City and Davao del Sur province in Region XI and Cotabato in Region XII. The peak overlooks Davao City 45 kilometers (28 mi) to the northeast, Digos 25 kilometers (16 mi) to the southeast, and Kidapawan 20 kilometers (12 mi) to the west. Mount Apo is a protected area and a Natural Park of the Philippines. Mount Apo is a flat-topped, 2,954 m (9,692 ft) high stratovolcano with three peaks. The southwest peak has the highest elevation and is topped by a 200 m (656 ft) wide crater that contains a small lake.</p><br><p style="font-size:.8em">source: <a href="https://davaodelsur.gov.ph/tourism/mt-apo/#:~:text=Mount%20Apo%20is%20a%20flat,andesitic%2Dto%2Ddacitic%20lava." target="_blank">https://davaodelsur.gov.ph/tourism/mt-apo/#:~:text=Mount%20Apo%20is%20a%20flat,andesitic%2Dto%2Ddacitic%20lava.</a></p></div>
+				</div>
+
+				<div class="mySlides3 fade">
+					<div class="numbertext">3 / 3</div>
+					<img src="asik.jpg" width="1000">
+					<div class="desc"><h3>ASIK-ASIK FALLS</h3><p>Asik-asik Falls is located at Sitio Dulao, Upper Dado, Alamada, North Cotabato. This spring falls is very amazing because there is no stream above the hill where the water comes. The water is springing from the rocks. Asik-Asik Spring has a big difference from the other falls in the Philippines, because its water flows from the stone at the side of the mountains and it's good to drink.</p><br><p style="font-size:.8em">source: <a href="https://www.vigattintourism.com/tourism/articles/The-Amazing-Asik-asik-Falls" target="_blank">https://www.vigattintourism.com/tourism/articles/The-Amazing-Asik-asik-Falls</a></p></div>
+				</div>
+				<a class="prev3" onclick="plusSlides3(-1)" title="previous">❮</a>
+				<a class="next3" onclick="plusSlides3(1)" title="next">❯</a>
+			</div>
+			<br>
+
+			<div style="text-align:center">
+				<span class="dot3" onclick="currentSlide3(1)" title="go to 1st image"></span> 
+				<span class="dot3" onclick="currentSlide3(2)" title="go to 2nd image"></span> 
+				<span class="dot3" onclick="currentSlide3(3)" title="go to 3rd image"></span> 
+			</div>
+		</div>
+		<script>
+			let slideIndex3 = 1;
+			showSlides3(slideIndex3);
+
+			function plusSlides3(n) {
+				showSlides3(slideIndex3 += n);
+			}
+
+			function currentSlide3(n) {
+				showSlides3(slideIndex3 = n);
+			}
+
+			function showSlides3(n) {
+				let i;
+				let slides3 = document.getElementsByClassName("mySlides3");
+				let dots3 = document.getElementsByClassName("dot3");
+				if (n > slides3.length) {slideIndex3 = 1}    
+				if (n < 1) {slideIndex3 = slides3.length}
+				for (i = 0; i < slides3.length; i++) {
+					slides3[i].style.display = "none";  
+				}
+				for (i = 0; i < dots3.length; i++) {
+					dots3[i].className = dots3[i].className.replace(" active", "");
+				}
+				slides3[slideIndex3-1].style.display = "block";  
+				dots3[slideIndex3-1].className += " active";
+			}
+		</script>
+	</section>
+</main>
+
+<footer>
+	<div class="col-12 ftrcont">
+		<div class="ftrformat">
+			<div class="cell">
+				<ul>
+					<li><h2>About the Philippines</h2></li>
+					<a href="#history"><li>History</li></a>
+					<a href="#environment"><li>Geography & Environment</li></a>
+					<a href="#demog"><li>Demographics</li></a>
+					<a href="#culture"><li>Culture</li></a>
+				</ul>
+			</div>
+			<div class="cell">
+				<ul>
+					<li><h2>Tourist Attractions</h2></li>
+					<a href="#luzon"><li>Luzon</li></a>
+					<a href="#visayas"><li>Visayas</li></a>
+					<a href="#mindanao"><li>Mindanao</li></a>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<p><a href="VideoGallery.html">Video Gallery</a> | <a href="Login.html">Login </a>| <a href="ContactUs.html">Contact Us</a></p>
+	<br>
+	<p>Copyright @2022. All Rights Reserved.</p>
+	<br>
+</footer>
+</body>
+</head>
+</html>
