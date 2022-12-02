@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- IIT406 - Computer Programming 3 -->
+<!-- Verdejo, Erle Joshua L. -->
+<!-- IT2A -->
+<!-- Finals - Login Form -->
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="act10external.css"> <!--link to the css file-->
+<body>
+<title>Login Form</title>
+<div class="center-container">
+	<h2 align="center">Login Form</h2>
+	<form>
+		<div class="container">
+			<label for="un"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="un" pattern="^(?=.*[I,T])(?!.*[A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,U,V,W,X,Y,Z])(?!.*[a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z])(?=.*[0,4,6])(?!.*[1,2,3,5,7,8,9])(?!.*[a-z]).{6,6}" title="Enter Username" required>
+			<label for="pass"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="pass" pattern="(?!.*\d)(?!.*[a-z])(?=.*[A-Z]).{6,6}" title="UPPERCASE only, 6 characters required!" id="input" required>
+			<input type="checkbox" onclick="myFunction()">Show Password
+			<button type="submit"><a href="CAROUSEL.html" style="text-decoration:none;color:white">Login</a></button>
+			<input type="checkbox" checked="checked"> Remember me
+			<script>
+				function myFunction() {
+					var x = document.getElementById("input");
+					if (x.type === "password") {
+						x.type = "text";
+					} else {
+						x.type = "password";
+					}
+				}
+			</script>
+		</div>
+		<div class="container" style="background-color:#f1f1f1">
+			<a href="Home.html"><button type="button" title="Go back to Home" class="cancel">Cancel</button></a>
+			<span class="psw">Forgot <a href="ForgotPassword.html">password?</a></span>
+		</div>
+	</form>
+</div>
+</body>
+</head>
+</html>

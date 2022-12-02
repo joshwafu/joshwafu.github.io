@@ -1,0 +1,50 @@
+body{
+	font-family:Arial;
+	background-image:url("loginbg.jpg");
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+}
+
+.center-container{
+	justify-content: center;
+	align-items: center;
+	margin:5% 25%;
+}
+
+form { /*border for the form*/
+	border: 3px solid #f1f1f1;
+} 
+
+input[type=text], input[type=password], input[type=email], textarea {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+button {
+	background-color: #04AA6D;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+}
+
+.cancel { /*style for the cancel button*/
+	width: auto;
+	padding: 10px 18px;
+	background-color: #f44336;
+}
+.container {
+	padding: 16px;
+	background-color:white;
+}
+span.psw {
+	float: right;
+	padding-top: 16px;
+}

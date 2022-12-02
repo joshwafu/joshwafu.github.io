@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="act10external.css"> <!--link to the css file-->
+<body>
+<title> Sign up Form</title>
+<h2>Sign up Form</h2>
+<form>
+	<div class="container">
+		<label for="email"><b>Email</b></label>
+		<input type="text" placeholder="Enter Email" name="email" required>
+		<label for="fname"><b>First Name</b></label>
+		<input type="text" placeholder="Enter First Name" name="fname" required>
+		<label for="lname"><b>Last Name</b></label>
+		<input type="text" placeholder="Enter Last Name" name="lname" required>
+		<div class="tooltip">
+			<label for="setpass"><b>Type Password</b></label>
+			<input type="password" placeholder="Enter Password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+			<span class="tooltiptext">Use upper and lower case characters, 1 or more numbers, and should be at least 8 characters!</span>
+		</div>
+		<label for="cpass"><b>Confirm Password</b></label>
+		<input type="password" placeholder="Re-enter Password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+		<button type="submit">Submit</button>
+	</div>
+</form>
+</body>
+</head>
+</html>
